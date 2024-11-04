@@ -27,5 +27,7 @@ class DatabaseSeeder extends Seeder
             'travel_id' => $travels->random()->id,
         ]);
 
+        $this->call(RoleSeeder::class);
+
     }
 }

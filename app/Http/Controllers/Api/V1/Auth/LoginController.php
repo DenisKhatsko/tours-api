@@ -7,8 +7,19 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group Auth endpoints
+ */
 class LoginController
 {
+    /**
+     * POST Login
+     *
+     * Login with existing user
+     *
+     * @response {"access_token": "1|WrE4OASS8KjHqKt3ZDlZXO5qjOQhcd3Z27At3oVSd41e3661"}
+     * @response 422 {"error": "The provided credentials are invalid"}
+     */
     public function __invoke(LoginRequest $request): JsonResponse
     {
         $user = User::query()->where('email', '=', $request->email)->first();

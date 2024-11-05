@@ -1,0 +1,152 @@
+name: 'Public endpoints'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/travels
+    metadata:
+      groupName: 'Public endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Travels'
+      description: 'returns paginated list of travels'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data": [{"id": "9d629399-b9b3-4a97-be48-f6787128be36", "name": "Quis neque eaque.","slug": "quis-neque-eaque", "number_of_days": 8,"number_of_nights": 7, "description": "Magni dolor vero veniam. Adipisci non fuga qui excepturi beatae." }]}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/travels/{travel_slug}/tours'
+    metadata:
+      groupName: 'Public endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Travel Tours'
+      description: 'Returns paginated list of tours by travel slug'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      travel_slug:
+        name: travel_slug
+        description: 'Travel slug.'
+        required: false
+        example: '"first-travel"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      travel_slug: '"first-travel"'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      priceFrom:
+        name: priceFrom
+        description: ''
+        required: false
+        example: '"123.45"'
+        type: number.
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      priceTo:
+        name: priceTo
+        description: ''
+        required: false
+        example: '"123.45"'
+        type: number.
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      dateFrom:
+        name: dateFrom
+        description: ''
+        required: false
+        example: '"2024-11-01 09:00:00"'
+        type: date.
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      dateTo:
+        name: dateTo
+        description: ''
+        required: false
+        example: '"2024-11-01 09:00:00"'
+        type: date.
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      sortBy:
+        name: sortBy
+        description: ''
+        required: false
+        example: '"price"'
+        type: string.
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      sortOrder:
+        name: sortOrder
+        description: ''
+        required: false
+        example: '"asc" or "desc"'
+        type: string.
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      priceFrom: '"123.45"'
+      priceTo: '"123.45"'
+      dateFrom: '"2024-11-01 09:00:00"'
+      dateTo: '"2024-11-01 09:00:00"'
+      sortBy: '"price"'
+      sortOrder: '"asc" or "desc"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id": "9d62939a-6b0c-4529-a6d8-6717958c5ce4","name": "Odio occaecati.","starting_date": "2025-06-01","ending_date": "2025-06-10", "price": "51.18"}]}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

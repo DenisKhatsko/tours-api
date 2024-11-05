@@ -18,7 +18,7 @@ use Illuminate\Support\Collection;
  * @property string $description
  * @property int $number_of_days
  * @property int $number_of_nights
- * @property Tour[]|Collection tours
+ * @property Tour[]|Collection $tours
  */
 class Travel extends Model
 {

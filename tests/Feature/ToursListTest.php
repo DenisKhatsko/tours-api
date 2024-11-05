@@ -4,9 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Tour;
 use App\Models\Travel;
-use Database\Factories\TravelFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ToursListTest extends TestCase
@@ -32,7 +30,7 @@ class ToursListTest extends TestCase
         $travel = Travel::factory()->create();
         Tour::factory()->create([
             'travel_id' => $travel->id,
-            'price' => 123.45
+            'price' => 123.45,
         ]);
 
         $response = $this->get('/api/v1/travels/'.$travel->slug.'/tours');
@@ -59,12 +57,12 @@ class ToursListTest extends TestCase
         $laterTour = Tour::factory()->create([
             'travel_id' => $travel->id,
             'starting_date' => now()->addDays(2),
-            'ending_date' => now()->addDays(3)
+            'ending_date' => now()->addDays(3),
         ]);
         $earlierTour = Tour::factory()->create([
             'travel_id' => $travel->id,
             'starting_date' => now(),
-            'ending_date' => now()->addDays(1)
+            'ending_date' => now()->addDays(1),
         ]);
 
         $response = $this->get('/api/v1/travels/'.$travel->slug.'/tours');
@@ -80,20 +78,20 @@ class ToursListTest extends TestCase
             'travel_id' => $travel->id,
             'price' => 200,
             'starting_date' => now()->addDays(1),
-            'ending_date' => now()->addDays(4)
+            'ending_date' => now()->addDays(4),
         ]);
 
         $cheaperLaterTour = Tour::factory()->create([
             'travel_id' => $travel->id,
             'price' => 100,
             'starting_date' => now()->addDays(2),
-            'ending_date' => now()->addDays(3)
+            'ending_date' => now()->addDays(3),
         ]);
         $cheaperEarlierTour = Tour::factory()->create([
             'travel_id' => $travel->id,
             'price' => 200,
             'starting_date' => now(),
-            'ending_date' => now()->addDays(1)
+            'ending_date' => now()->addDays(1),
         ]);
 
         $response = $this->get('/api/v1/travels/'.$travel->slug.'/tours?sortBy=price&sortOrder=asc');
@@ -155,12 +153,12 @@ class ToursListTest extends TestCase
         $earlierTour = Tour::factory()->create([
             'travel_id' => $travel->id,
             'starting_date' => now(),
-            'ending_date' => now()->addDays(3)
+            'ending_date' => now()->addDays(3),
         ]);
         $laterTour = Tour::factory()->create([
             'travel_id' => $travel->id,
             'starting_date' => now()->addDays(3),
-            'ending_date' => now()->addDays(5)
+            'ending_date' => now()->addDays(5),
         ]);
 
         $endpoint = '/api/v1/travels/'.$travel->slug.'/tours';
@@ -199,10 +197,5 @@ class ToursListTest extends TestCase
         $response = $this->getJson('/api/v1/travels/'.$travel->slug.'/tours?priceFrom=abc');
         $response->assertStatus(422);
 
-
     }
-
-
-
-
 }

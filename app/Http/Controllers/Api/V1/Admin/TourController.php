@@ -7,7 +7,6 @@ use App\Http\Resources\V1\TourResource;
 use App\Models\Travel;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-
 class TourController
 {
     public function store(Travel $travel, TourRequest $request): JsonResource

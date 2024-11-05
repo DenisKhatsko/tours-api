@@ -15,7 +15,6 @@ use Illuminate\Validation\Rule;
  */
 class ToursListRequest extends FormRequest
 {
-
     public function authorize(): bool
     {
         return true;

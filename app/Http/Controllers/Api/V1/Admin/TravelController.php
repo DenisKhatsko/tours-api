@@ -9,14 +9,14 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class TravelController
 {
-    public function store(TravelRequest $travelRequest):JsonResource
+    public function store(TravelRequest $travelRequest): JsonResource
     {
         $travel = Travel::create($travelRequest->validated());
 
         return new TravelResource($travel);
     }
 
-    public function update(Travel $travel, TravelRequest $travelRequest):JsonResource
+    public function update(Travel $travel, TravelRequest $travelRequest): JsonResource
     {
         $travel->update($travelRequest->validated());
 

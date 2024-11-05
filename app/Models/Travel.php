@@ -12,17 +12,17 @@ use Illuminate\Support\Collection;
 
 /**
  * @property string $id
- * @property  string $slug
+ * @property string $slug
  * @property string $name
- * @property boolean $is_public
+ * @property bool $is_public
  * @property string $description
- * @property integer $number_of_days
- * @property integer $number_of_nights
+ * @property int $number_of_days
+ * @property int $number_of_nights
  * @property Tour[]|Collection tours
  */
 class Travel extends Model
 {
-    use HasFactory, Sluggable, HasUuids;
+    use HasFactory, HasUuids, Sluggable;
 
     protected $table = 'travels';
 
@@ -31,7 +31,7 @@ class Travel extends Model
         'slug',
         'name',
         'description',
-        'number_of_days'
+        'number_of_days',
     ];
 
     public function tours(): HasMany
@@ -43,8 +43,8 @@ class Travel extends Model
     {
         return [
             'slug' => [
-                'source' => 'name'
-            ]
+                'source' => 'name',
+            ],
         ];
     }
 
@@ -54,6 +54,4 @@ class Travel extends Model
             get: fn ($value, $attributes) => (int) $attributes['number_of_days'] - 1
         );
     }
-
-
 }

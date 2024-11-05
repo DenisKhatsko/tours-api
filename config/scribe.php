@@ -118,7 +118,7 @@ return [
         'placeholder' => '{ACCESS_TOKEN}',
 
         // Any extra authentication-related info for your users. Markdown and HTML are supported.
-        'extra_info' => 'You can retrieve your token by visiting your dashboard and logging in via api/v1/login.',
+        'extra_info' => 'You can retrieve your token by logging in via api/v1/login.',
     ],
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.

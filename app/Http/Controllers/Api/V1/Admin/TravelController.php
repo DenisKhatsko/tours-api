@@ -15,4 +15,11 @@ class TravelController
 
         return new TravelResource($travel);
     }
+
+    public function update(Travel $travel, TravelRequest $travelRequest):JsonResource
+    {
+        $travel->update($travelRequest->validated());
+
+        return new TravelResource($travel);
+    }
 }

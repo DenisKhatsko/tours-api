@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignUuid('travel_id')->constrained('travels');
 
             $table->string('name');
-            $table->string('description');
             $table->date('starting_date');
             $table->date('ending_date');
             $table->integer('price');

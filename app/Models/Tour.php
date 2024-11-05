@@ -14,7 +14,6 @@ use Illuminate\Support\Carbon;
  * @property string $travel_id
  * @property string $name
  * @property mixed $price
- * @property string $description
  * @property Carbon $starting_date
  * @property Carbon $ending_date
  *
@@ -26,7 +25,6 @@ class Tour extends Model
     protected $fillable = [
         'travel_id',
         'name',
-        'description',
         'starting_date',
         'ending_date',
         'price',

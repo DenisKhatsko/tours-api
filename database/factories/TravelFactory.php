@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class TravelFactory extends Factory
 {
-
     public function definition(): array
     {
         return [
@@ -17,7 +16,6 @@ class TravelFactory extends Factory
             'name' => fake()->text(20),
             'number_of_days' => rand(1, 10),
             'description' => fake()->text(100),
-
 
         ];
     }

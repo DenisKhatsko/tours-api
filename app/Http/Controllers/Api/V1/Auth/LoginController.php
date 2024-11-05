@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Api\V1\Auth;
 use App\Http\Requests\V1\LoginRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController
 {
-
     public function __invoke(LoginRequest $request): JsonResponse
     {
         $user = User::query()->where('email', '=', $request->email)->first();

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use DateTime;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,7 +15,6 @@ use Illuminate\Support\Carbon;
  * @property mixed $price
  * @property Carbon $starting_date
  * @property Carbon $ending_date
- *
  */
 class Tour extends Model
 {
@@ -29,15 +27,14 @@ class Tour extends Model
         'ending_date',
         'price',
     ];
+
     protected $perPage = 15;
 
     public function price(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value / 100,
-            set: fn($value) => $value * 100
+            get: fn ($value) => $value / 100,
+            set: fn ($value) => $value * 100
         );
     }
-
-
 }
